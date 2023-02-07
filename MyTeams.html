@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cricket Match Teams Between Two or more Countries</title>
+        <style>
+            body{
+                font-family:Arial, Helvetica, sans-serif;
+                background-color:aqua;
+            }
+            *{
+                box-sizing:border-box;
+            }
+            .container{
+                padding:16px;
+                background-color:white;
+            }
+            input[type=text], input[type=number], input[type=date]{
+                 width:100%;
+                 padding:20px;
+                 margin: 4px 0 22px 0;
+                 display:inline-block;
+                 border:none;
+                 background: #f1f1f1;
+            }
+            input[type=text]:focus, input[type=number]:focus, input[type=date]:focus{
+                background-color:aquamarine;
+                outline:none;
+            }
+            .seeresultbtn{
+                background-color:greenyellow;
+                color:red;
+                padding:20px 50px;
+                margin:9px 0;
+                border:none;
+                cursor:pointer;
+                width:100%;
+                opacity:0.9;
+            }
+            .seeresultbtn:hover{
+                  opacity: 1;
+            }
+            form{
+                align-content: center;
+            }
+            h1{
+                text-align: center;
+                font-size:50px;
+                color:darkmagenta;
+            }
+            h2{
+                text-align:center;
+                font-size:30px;
+                color:darkmagenta;
+            }
+            label{
+                text-align:center;
+                font-size:30px;
+                color:darkmagenta;
+            }
+            form{
+                background-color:palegreen;
+                color:seagreen;
+            }
+        </style>
+        <script>
+      function myFunc(){
+        var myname1=document.getElementById("name1").value;
+        var myname2=document.getElementById("name2").value;
+        var score1=document.getElementById("num1").value;
+        var score2=document.getElementById("num2").value;
+        if (score1 == score2)
+        {
+            alert("Both values are equal!!");
+        }
+        else if(score1 > score2)
+        {
+            alert("First one is winner!!");
+        }
+        else
+        {
+            alert("Second one is winner!!");
+        }
+      }
+        </script>
+    </head>
+    <body>
+    <form name="seeresult" onSubmit="return myFunc()">
+        <h1>Cricket Match Between two teams</h1>
+        <label><b>Date of Match:</b></label><input type="date" name="date" required>
+        <h2>Team-1</h2><br>
+        <label><b>Team Name:</b></label><input type="text" name="name1" id="name1" placeholder="Team Name" required><br><br>
+        <label><b>Team Score:</b></label><input type="number" name="num1" id="num1" placeholder="Team Score" required><br>
+        <br><br><br>
+
+        <h2>Team-2</h2><br>
+        <label><b>Team Name:</b></label><input type="text" name="name2" id="name2" placeholder="Team Name" required><br><br>
+        <label><b>Team Score:</b></label><input type="number" name="num2" id="'num2" placeholder="Team Score" required><br>
+        <br><br><br>
+        <p id="result"></p>
+        <button type="submit" class="seeresultbtn" onclick="myFunc()">See Result</button>
+    </form>
+    </body>
+</html>
